@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeralaTourism</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+  
+.myMargin {
+    margin: 10px;
+    margin-right: 1px;
+    padding: 10px;
+}
+
+.content-1{
+    text-align: center;
+}
+
+
+
+/* The sidebar menu */
+.sidenav {
+    height: 92%; /* Full-height: remove this if you want "auto" height */
+    margin-left: 5px;
+    margin-top: 60px;
+  
+  
+    width: 230px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 0; /* Stay on top */
+     /* Stay at the top */
+    left: 0;
+    background-color: rgb(70, 153, 70);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 230px; /* Same as the width of the sidebar */
+    font-family: 'Times New Roman', Times, serif;
+  overflow-x: hidden;
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 5px; }
+    .sidenav a {font-size: 10px;}
+  }
+
+ 
+  .navbar{
+    margin-left: 0px;
+   
+    height: 8%;
+  }
+
+  
+    
+    .dropdown{
+      background-color: blue;
+    }
+
+
+
+  footer {
+    width: 100%;
+    height: 5%;
+    background: rgb(199, 199, 156);
+      text-align: center;
+      padding: 25px;
+  } 
+ 
+</style>
+</head>
+<body >
+  
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%; position: fixed; z-index: 1; " >
+   
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><h6>Home</h6> <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="./kerala.html"><h6>About Us</h6></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><h6>Contact Us</h6></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./signin.html"><h6>Sign In</h6></a>
+        </li>
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           
+           
+           
+            Districts<span class="caret"></span></button>
+          </a>
+          <ul class="dropdown-menu" >
+            <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
+            <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
+            <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
+            <li><a href="./DISTRICTS/kozhikode.html">KOZHIKODE</a></li>
+            <li><a href="./DISTRICTS/malappuram.html">MALAPPURAM</a></li>
+            <li><a href="./DISTRICTS/palakkad.html">PALAKKAD</a></li>
+            <li><a href="./DISTRICTS/trichur.html">THRISSUR</a></li>
+            <li><a href="./DISTRICTS/ekm.html">ERNAKULAM</a></li>
+            <li><a href="./DISTRICTS/idukki.html">IDUKKI</a></li>
+            <li><a href="./DISTRICTS/ktym.html">KOTTAYAM</a></li>
+            <li><a href="./DISTRICTS/alppy.html">ALAPPUZHA</a></li>
+            <li><a href="./DISTRICTS/pathanmthtt.html">PATHANAMTHITTA</a></li>
+            <li><a href="./DISTRICTS/kollam.html">KOLLAM</a></li>
+            <li><a href="./DISTRICTS/tvm.html">THIRUVANANTHAPURAM</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a href="./districts.html">DISTRICTS</a></li>
+          </ul>
+          </div>
+        </li>
+      
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+    <!-- Side navigation -->
+  <div class="sidenav"  >
+     <a href="./SIDEBAR/adventure.html">ADVENTURE TOURISM</a>  
+     <a href="./SIDEBAR/archeol.html">ARCHEOLOGICAL TOURISM</a> 
+     <a href="./SIDEBAR/ayurveda.html">AYURVEDA</a>
+    <a href="./SIDEBAR/boating.html">BOATING</a>
+     <a href="./SIDEBAR/birdwatching.html">BIRD WATCHING</a>
+     <a href="./SIDEBAR/camping.html">CAMPING</a>
+     <a href="./SIDEBAR/culinary.html">CULINARY TOURISM</a>
+     <a href="./SIDEBAR/cultural.html">CULTURAL TOURISM</a>
+     <a href="./SIDEBAR/dental.html">DENTAL TOURISM</a>   
+     <a href="./SIDEBAR/farm.html">FARM TOURISM</a>
+     <a href="./SIDEBAR/honeymoon.html">HONEYMOON TOURISM</a>   
+     <a href="./SIDEBAR/literary.html">LITERARY TOURISM</a>
+     <a href="./SIDEBAR/music.html">MUSIC TOURISM</a>
+     <a href="./SIDEBAR/medical.html">MEDICAL TOURISM</a>
+     <a href="./SIDEBAR/nautical.html">NAUTICAL TOURISM</a>
+     <a href="./OTHERS/holyplaces.html">RELIGIOUS TOURISM</a>
+     <a href="./SIDEBAR/rural.html">RURAL TOURISM</a>
+     <a href="./SIDEBAR/spice.html">SPICE TOURISM</a>
+     <a href="./SIDEBAR/sports.html">SPORTS TOURISM</a>
+     <a href="./SIDEBAR/virtual.html">3D VIRTUAL TOURISM</a>
+     <a href="./SIDEBAR/wildlife.html">WILDLIFE</a>  
+     <a href="./SIDEBAR/yoga.html">YOGA</a>
+  </div>
+   
+  <!-- <div class="sidenavright navbar-collapse" >
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7z">Find nearest Tourist spot</a>
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7z">Find nearest DTPC centre</a>
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7zs">Find nearest Restaurants</a>
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7z">Find nearest Stay</a>
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7z">Find nearest Medical Help Centres</a>
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7zs">Find nearest Railway station</a>
+     <a href="https://www.google.com/maps/@10.54063,76.1283185,7z">Find nearest Bus Stand</a>
+     <a href="#clients">Need an Escorted Tour</a>
+    <a href="#contact">Need help for your Self Guided Tour</a>
+    <a href="#clients">Tour Packages</a>
+    <a href="#clients">Plan a Trip?</a>
+     <form id="newsletter">
+      <div class="form-group">
+          <h6>
+        Get our Newsletter<br></h6><p style="font-size: x-small;"> Want the latest and greatest from our site straight to your inbox?Check us your details and get weekly email.
+      
+        </p>
+        <div class="form-group" >
+          <label for="exampleInputPassword1" style="font-size: x-small;">UserName</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <label for="exampleInputEmail1" style="font-size: x-small;">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        
+      </div>
+      
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1" style="font-size: x-small;">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary" style="font-size: x-small;">Submit</button>
+    </form>
+   
+  </div> -->
+
+  
+  
+   <!-- Page content -->
+   
+   <div class="main" >
+
+     
+       <!-- navBar starts here -->
+<!--        
+       <nav class="navbar navbar-expand-lg navbar-light bg-light" style=" margin: 0px; position: fixed; z-index: 1; margin-right: opx; ">
+     
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><h6>Home</h6> <span class="sr-only">(current)</span></a>
+          </li>
+   
+          
+          <li class="nav-item dropdown" style="margin: 0px; padding: 0px;" >
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Districts
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
+              <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
+              <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
+              <li><a href="./DISTRICTS/kozhikode.html">KOZHIKODE</a></li>
+              <li><a href="./DISTRICTS/malappuram.html">MALAPPURAM</a></li>
+              <li><a href="./DISTRICTS/palakkad.html">PALAKKAD</a></li>
+              <li><a href="./DISTRICTS/trichur.html">THRISSUR</a></li>
+              <li><a href="./DISTRICTS/ekm.html">ERNAKULAM</a></li>
+              <li><a href="./DISTRICTS/idukki.html">IDUKKI</a></li>
+              <li><a href="./DISTRICTS/ktym.html">KOTTAYAM</a></li>
+              <li><a href="./DISTRICTS/alppy.html">ALAPPUZHA</a></li>
+              <li><a href="./DISTRICTS/pathanmthtt.html">PATHANAMTHITTA</a></li>
+              <li><a href="./DISTRICTS/kollam.html">KOLLAM</a></li>
+              <li><a href="./DISTRICTS/tvm.html">THIRUVANANTHAPURAM</a></li>
+              
+            </ul>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="./kerala.html"><h6>About Us</h6></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><h6>Contact Us</h6></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./signin.html"><h6>Sign In</h6></a>
+          </li>
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0" >
+          <input class="form-control mr-sm-4" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </nav> -->
+         <!-- navbar ends here -->
+     
+     <div class="row" style="height: 25px;">
+
+     </div>
+   
+       
+    <!-- carousel starts here -->
+    <div class="row myMargin"  >
+      <div class="col-lg-1"></div>
+        <div class="col-lg-10"> 
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="./districts.html"style="color: white; font-weight: bold; ">
+                <img src="https://i.ytimg.com/vi/kPPgFu49kBg/maxresdefault.jpg" class="d-block w-100" style="height: 500px;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Kerala is nicknamed as "God’s own country"</h5>
+                  <p>Kerala, the land of rivers and backwaters is a green strip of land, in the South West corner of Indian peninsula.Its unique culture and traditions, coupled with its varied demography, has made it one of the most popular tourist destinations in India.</p>
+                 </a>
+                 </div>
+              </div>
+              <div class="carousel-item">
+                <a href="./DISTRICTS/alppy.html"style="color: white; font-weight: bold; ">
+                <img src="https://cdn.shopify.com/s/files/1/1808/5743/products/hb3_80527c31-3204-4949-84e6-8a469134d36a_1024x1024.jpg?v=1489336570" class="d-block w-100" style="height: 500px;"  alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Aleppey Houseboats</h5>
+                  <p>No trip to Kerala will complete without a backwater cruise on a houseboat; most of these are leisure & family tours, honeymoon tours, and packaged tours</p>
+                   </a>
+                 </div>
+              </div>
+               <div class="carousel-item">
+                 <a href="./SIDEBAR/adventure.html" style="color: white; font-weight: bold; ">
+                 <img src="http://irisholidays.com/keralatourism/wp-content/uploads/2017/04/rainforest-resort-athirapilly-kerala-treehouse-waterfalls.gif" style="height: 500px;" class="d-block w-100" alt="...">
+                 <div class="carousel-caption d-none d-md-block">
+                   <h5>Kerala treehouse</h5>
+                   <p>Kerala treehouse is a unique and exclusive experience, for the kind of close encounters with nature and forests it provides. A tree house in kerala is among the best examples of responsible tourism in the world. </p>
+                   </a>
+                   </div>
+               </div>
+           
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+         
+          </div>
+          </div>
+          </div>
+          <div class="col-lg-1"></div>
+          <!-- div of row -->
+   </div> 
+
+       <!-- carousel ends here -->
+   
+   <!-- about kerala -->
+   <div class="card mb-3 myMargin" style="width: fit-content;" >
+    <div class="row no-gutters">
+      <div class="col-lg-4">
+        <img src="https://i.ytimg.com/vi/kPPgFu49kBg/maxresdefault.jpg" class="card-img" style="height: 250px;" alt="...">
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body">
+          <a href="./districts.html"><h5 class="card-title">Kerala Tourism</h5></a>
+          <p class="card-text">Kerala is nicknamed as “God’s own country“.
+
+            Kerala is a state on the tropical Malabar Coast of southwestern India. Nicknamed as one of the “10 paradises of the world” by National Geographic, Kerala is famous especially for its eco-tourism initiatives. Its unique culture and traditions, coupled with its varied demography, has made it one of the most popular tourist destinations in India. Growing at a rate of 13.31%, the tourism industry significantly contributes to the state’s economy. Kerala is known for its tropical backwaters and pristine beaches such as Kovalam.</p>
+            <a href="./districts.html">Read More</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- top destinations -->
+<div class="myMargin" style="background-color: beige;">
+  <a href="./OTHERS/top_destinations.html"><h3 style="text-align: center; padding: 20px;"> TOP DESTINATIONS IN KERALA</h3></a>
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col       mb-4">
+        <div class="card">
+          <img src="https://ihplb.b-cdn.net/wp-content/uploads/2016/11/alleppey.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Alleppey – The Venice of India</h5>
+            <p class="card-text">Alleppey tops the list of best tourist attractions in Kerala. The city was titled the ‘Venice of the East’. The backwaters in the area are perfect for a houseboat vacation. Go exploring on the watery routes. </p>
+            <a href="#">Read More...</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card">
+          <img src="https://ihplb.b-cdn.net/wp-content/uploads/2016/11/munnar.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Munnar – South India’s Tea Heaven</h5>
+            <p class="card-text">Munnar is one of the most beautiful hill station in Kerala. Snuggled at 6000 feet, the town has an easy charm. The gradient and the salubrious weather of this hill are perfect for tea farming. The hill station has about 80,000 miles of tea plantation.</p>
+            <a href="#">Read More...</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card">
+          <img src="https://ihplb.b-cdn.net/wp-content/uploads/2016/11/kovalam.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> Kovalam – Kerala’s Beach Paradise</h5>
+            <p class="card-text">Listed among the best destination of Kerala, Kovalam is a beauty and one offering cherished experiences. The place offers a lot to tourists. In addition, the pleasant weather, soothing breeze, golden soft sand, and tall coconut trees add more charm to this little piece of paradise. </p>
+            <a href="#">Read More...</a>
+          </div>
+        </div>
+      </div>
+     
+      <a href="./OTHERS/top_destinations.html" style="text-align: center;"><h5>Load More...</h5></a>
+    </div>
+  </div>
+
+  <!-- Major Architectures -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/architectures.html"><h3 style="text-align: center; padding: 20px;"> MAJOR ARCHITECTURES </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2016/12/Jewish-Synagogue-Cochin.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jewish-Synagogue</h5>
+              <p class="card-text">Also commonly called as the ‘Paradesi Synagogue’ or ‘Mattancherry Synagogue’, the ‘Jewish Synagogue’ located in the small neighbourhood of Mattencherry in Old Cochin, dates back to 1568 and was built by the community of Paradesi Jews who once inhabited the Jew Town area in Kerala during the olden times.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2016/06/St.Francis-Church.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">St. Francis Church</h5>
+              <p class="card-text">Built in 1503, ‘St. Francis Church’ holds the status of being the oldest European church in India. One of the most historically significant places in Kerala, which once stood as a quiet spectator to the struggle of different European colonial powers in the Indian subcontinent, the St. Francis Church today, attracts countless visitors from across the globe. .</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2016/12/Mattencherry-Palace.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Dutch Palace</h5>
+              <p class="card-text">Commonly referred to as ‘Mattencherry Palace’, the ‘Dutch Palace’ stands close to the ‘Jewish Synagogue’ in Jew Town area of Mattencherry neighbourhood and makes for yet another significant historical sightseeing places in Kerala</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+  
+        
+        <a href="./OTHERS/architectures.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+  <!-- kerala Beaches -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/beaches.html"><h3 style="text-align: center; padding: 20px;">MAJOR BEACHES </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://www.keralatourism.org/images/hri/large/crescent_shaped_kovalam_beach_31.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Kovalam Beach</h5>
+              <p class="card-text">Alleppey tops the list of best tourist attractions in Kerala. The city was titled the ‘Venice of the East’. The backwaters in the area are perfect for a houseboat vacation. Go exploring on the watery routes. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.keralatourism.org/images/hri/large/mandapam_at_shangumugham_beach_35.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Shanmugham Beach</h5>
+              <p class="card-text">Munnar is one of the most beautiful hill station in Kerala. Snuggled at 6000 feet, the town has an easy charm. The gradient and the salubrious weather of this hill are perfect for tea farming. The hill station has about 80,000 miles of tea plantation.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.keralatourism.org/images/hri/large/varkala_beach_overlooked_by_cliffs_41.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Varkala Beach</h5>
+              <p class="card-text">Listed among the best destination of Kerala, Kovalam is a beauty and one offering cherished experiences. The place offers a lot to tourists. In addition, the pleasant weather, soothing breeze, golden soft sand, and tall coconut trees add more charm to this little piece of paradise. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        
+        <a href="./OTHERS/beaches.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+  <!-- Kerala Hillstations -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/hillstations.html"><h3 style="text-align: center; padding: 20px;"> MAJOR HILLSTATIONS</h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://www.trawell.in/admin/images/thumbs/049130493Munnar_Main_thumb.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Munnar</h5>
+              <p class="card-text">Situated at an altitude ranging from 5000 to 8000 feet on the Kannan Devan Hills, the fascinating hill station of Munnar is one of the best tourist places in kerala and among the must include places in your honeymoon tour packages. It is about 120 km from Kochi, and 284 km from Trivandrum.
+                . </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.trawell.in/admin/images/thumbs/929693975Ponmudi_Main2_thumb.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ponmudi</h5>
+              <p class="card-text">At a distance of 15 km from Kallar, 57 km from Trivandrum, 102 km from Kollam, 131 km from Kanyakumari, 167 km from Tirunelveli, 172 km from Kottayam, 178 km from Alappuzha, 225 km from Tuticorin, 233 km from Kochi, 267 km from Madurai, 298 km from Munnar, and 371 km from Rameswaram, Ponmudi is a small hill station located in the Peringamala Panchayat of Trivandrum district, Kerala..</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.trawell.in/admin/images/thumbs/154862962Nelliyampathy_Main_thumb.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Nelliyampathy</h5>
+              <p class="card-text">At a distance of 60 km from Palakkad, 75 km from Pollachi, 75 km from Thrissur & 105 km from Coimbatore, Nelliyampathy, also spelled as Nelliampathi, is a charming hill town in Palakkad district of Kerala. The Nelliyampathy hills and mountains form a part of the Sahyadri ranges in the Western Ghats.. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+       
+        <a href="./OTHERS/hillstations.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+  
+      <!-- holy places -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/holyplaces.html"><h3 style="text-align: center; padding: 20px;"> MAJOR HOLY PLACES </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2017/04/Sri-Padmanabhaswamy-Temple.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sri-Padmanabhaswamy-Temple</h5>
+              <p class="card-text">If you want to see the exquisite Dravidian style of architecture, then plan a trip to the well known Sree PadmanabhaswamyTemple in Thiruvananthapuram, the capital city. This richest temple in the country is dedicated to Lord Vishnu and believed to be built in the 8th century. Sree PadmanabhaswamyTemple is one of the 108 Vishnu temples. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2017/04/St.Marys-Forane-Church-Kuravilangad.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">St. Mary's Forane Church, Kuravilangad</h5>
+              <p class="card-text">Kerala is not only famous for its beautiful Hindu temples, but also for its sacred Christian tourist destinations. The state boasts several ancient churches worth visiting for people who plan some pilgrimage holidays in this South Indian state. St. Mary’s Forane Church at Kuravilangad is one such must-visit Christian pilgrim center located in the Kottayam district in Kerala..</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://k6u8v6y8.stackpathcdn.com/blog/wp-content/uploads/2017/04/Beemapalli-in-Thiruvananthapuram.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Beemapalli Mosque</h5>
+              <p class="card-text">Kerala is not only famous for beautiful temples and churches but also for elegant mosque. The Beemapally Mosque situated in the outskirts of Thiruvanathapuram is one of the well known muslim pilgrim centers in the state. Located nearly 12 kilometers away from the capital city of Thiruvananthapuram, this mosque is famous for its annual Urus. . </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+       
+        <a href="./OTHERS/holyplaces.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+  <!-- nature and waterfall getaways -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/waterfalls.html"><h3 style="text-align: center; padding: 20px;"> MAJOR WATERFALLS </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.ZyhpAGnrSwUwM-QmDI58XAHaEK&pid=Api&P=0&w=280&h=158" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Athirappally and Vazhachal</h5>
+              <p class="card-text">Kerala, an amazingly beautiful green land is blessed with wonderful waterfalls. Athirappilly Falls is one of the most beautiful and popular way among them. Athirappilly is said to be the land of rivers and waterfalls.
+                Athirappilly waterfall located at the entrance of Sholayar ranges at a distance of about 78 km from Kochi draws thousands of tourists from every part of the country.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.SOKsC4kZYWAGEvottcMAGgHaFj&pid=Api&P=0&w=222&h=167" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Palaruvi</h5>
+              <p class="card-text">Palaruvi waterfalls one of the most wonderful waterfalls in Kerala is in the Cashew town Kollam. The water in here is said to be medicated and is preventive against many diseases.
+                Water cascading down a height of 300 feet across the rocky mountains is a wonderful scene. The journey to Palaruvi itself is amazing with the scenic beauty.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.Qd7ykvNX3fqPT36lb46nOgHaEY&pid=Api&P=0&w=277&h=164" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Thusharagiri</h5>
+              <p class="card-text">Cuddled in the western ghats the gurgling waterfalls of Thusharagiri show a peculiar relationship between land and water.This popular waterfall is situated 50 km east of Kozhikode. Two stream originating from the western ghats meet to form the river Chalippuzha. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        
+        <a href="./OTHERS/waterfalls.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+    <!-- museums in kerala -->
+    <div class="myMargin" style="background-color: beige;">
+      <a href="./OTHERS/museums.html"><h3 style="text-align: center; padding: 20px;">MUSEUMS IN KERALA </h3></a>
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="col       mb-4">
+            <div class="card">
+              <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/05/The-Napier-Museum1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Alleppey – The Napier Museum</h5>
+                <p class="card-text">If you are a lover of art and architecture, then you are going to love visiting the Napier Museum which is one of the best museums in Kerala. Built-in the Anglo Saracen architectural style, the gothic roof, and minarets are highly impressive. Admire the bronze idols, stone carvings, ancient ornaments, and artifacts on display.</p>
+                <a href="#">Read More...</a>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/05/Hill-Palace-Archaeological-Museum1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hill Palace Archaeological-Museum</h5>
+                <p class="card-text">What once used to be the residential palace of Kings of Kochi has now been turned into an Archaeological Museum. Get a sneak peek inside the royal life of kings and go green with jealousy. The museum displays a collection of crowns and ornaments, old sculptures, beautiful paintings, and sartorial collection.</p>
+                <a href="#">Read More...</a>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+              <img src="https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2019/05/Kerala-Folklore-Cultural-Museum1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> Kerala Folklore and Cultural Museum</h5>
+                <p class="card-text">The state of Kerala is rich in culture and heritage. You will find a variety of dance and art forms in God’s own country. What better place there is to explore the art and heritage of South India than Kerala Folklore and Cultural Museum? Find unique window frames, handpainted ceilings, folk art puppets, typical music instruments, and samples of architecture inside the museum. </p>
+                <a href="#">Read More...</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="./OTHERS/museums.html" style="text-align: center;"><h4>Load More...</h4></a>
+        </div>
+      </div>
+
+     <!-- Fairs and festivals in Kerala -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/fairs_festivals.html"><h3 style="text-align: center; padding: 20px;"> FAIRS AND FESTIVALS IN KERALA </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://www.ekeralatourism.net/wp-content/uploads/2016/11/festival-box-4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Thrissur Pooram</h5>
+              <p class="card-text">During the month of Medam in the Malayalam calendar, the entire of Kerala gets ready to celebrate an annual Hindu Temple Festival called the ThrissurPooram. The largest and the most popular among all the Temple Festivals in Kerala, this celebration marks the rising of the moon with the ‘Pooram’ star! </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.ekeralatourism.net/wp-content/uploads/2016/11/festival-box-9.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Attukal Pongala</h5>
+              <p class="card-text">AttukalPongala or the ‘Festival of Women’ is among the most devout festivals in Kerala. Celebrated mainly in the AttukalBhagavathi Temple in Thiruvananthapuram, this holy festival has been declared as the ‘Largest Single Gathering of Women’ by the Guinness Society!</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.ekeralatourism.net/wp-content/uploads/2016/11/festival-box-7.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Boat Festival</h5>
+              <p class="card-text">Boat Race or ‘VallamKalli’ is one of the most vigorously celebrated festivals in Kerala. An annual festival in God’s Own Country, it is a traditional boat race that is held during Kerala’s harvest festival ‘Onam’, and is celebrated by locals from all religious background. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+       
+        <a href="./OTHERS/fairs_festivals.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+     <!-- Kerala Artforms -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/artforms.html"><h3 style="text-align: center; padding: 20px;"> KERALA ARTFORMS </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.keralatourism.org/images/artforms/categoryimages/martial_art20131115151616.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Martial Arts</h5>
+              <p class="card-text">
+                Considered among the oldest and most scientific martial arts in the world, Kalaripayattu was developed in Kerala. Lauded as the pride of Kerala, it is acknowledged and respected across the world.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.keralatourism.org/images/artforms/categoryimages/performing_art20131115151820.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Performing Arts</h5>
+              <p class="card-text">The performing arts of God’s Own Country have a special pull and connection amongst all audiences. On stage or by the road, the setting is never the primary attraction but rather, what steals the spotlight. It is the artists on stage with their movements, make-up and story telling</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.keralatourism.org/images/artforms/categoryimages/ritual_art20131115151713.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Ritual Artforms of Kerala</h5>
+              <p class="card-text">The ritual art forms of Kerala are important cultural benchmarks that have helped shaped the very conscience of the State. From depicting our legends, distinctive traditions, historical yarns and mythical beings, to providing commentary on social injustices in the form of satirical plays and skits, they have moulded the conventions and conversations on our shores for centuries. Listed below are some of the finest ritual arts in God’s Own Country. </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>        
+        <a href="./OTHERS/artforms.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>
+  <!-- places of Historical imporatnce -->
+  <div class="myMargin" style="background-color: beige;">
+    <a href="./OTHERS/history.html"><h3 style="text-align: center; padding: 20px;">PLACES OF HISTORICAL IMPORTANCE </h3></a>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col       mb-4">
+          <div class="card">
+            <img src="https://www.holidify.com/images/cmsuploads/square/attr_1320.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Bekal Fort, Bekal</h5>
+              <p class="card-text">Built almost 300 years ago, Bekal Fort is considered as one of the largest and most preserved forts in Kerala. Narrating a story of its past, the fort stands in its full glory and grandeur. It is visited by numerous visitors every year. Nestle in the lap of nature, Bekal Fort is a historic fort surrounded by a beautiful beach offering an enchanting view of Arabian Sea from its high observation tower where once the cannons were placed </p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.holidify.com/images/cmsuploads/square/B12_20171003012733.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Bolgatty Palace</h5>
+              <p class="card-text">Bolgatty Palace is located in Bolgatty Island of Kochi and is one of the oldest existing Dutch palaces that is situated outside Holland. It is an exquisite example of the Kochi style of architecture. Built-in 1744 by Dutch traders, it was later extended, and gardens were landscaped around it.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card">
+            <img src="https://www.holidify.com/images/cmsuploads/square/attr_3778.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> Shakthan Thampuran Palace</h5>
+              <p class="card-text">Shakthan Thampuran Palace situated in the town of Thrissur marks the royal residence of the king of Cochin and has been a famous tourist attraction because of its historical value. Popularly known as Vadakkekara Palace, its heritage value and dates back to the time of the King of Cochin named Rama Varma Shakthan Thampuran.</p>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+        
+        <a href="./OTHERS/history.html" style="text-align: center;"><h4>Load More...</h4></a>
+      </div>
+    </div>    
+<!-- page content ends here -->   
+<footer>
+ <h1 style="text-align: center;">Courtsey</h1>
+ 
+<!--  
+  <form class="form-inline"  >
+    Get our Newsletter <br>
+      <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your mail address" >
+  <button type="submit" class="btn btn-primary">Submit</button>  
+</div>
+</form> -->
+
+<!-- 
+<form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form> -->
+
+
+
+
+ <div>
+  <i class="fa fa-facebook-square" style="font-size:36px"></i>
+  <i class="fa fa-twitter-square" style="font-size:36px"></i>
+  <i class="fa fa-google-plus-square" style="font-size:36px"></i>
+  </div>
+</footer>
+<!-- div of main -->
+
+   
+   </div>   
+ 
+   
+
+</body>
+</html>

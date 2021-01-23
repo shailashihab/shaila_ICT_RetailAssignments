@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signin</title>
+        <link rel="stylesheet" href="./style.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+   
+    </head>
+    <style>
+ 
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(119, 175, 189, 0.9); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+}
+body{
+  background-image: url(./Images/godsown.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+    </style>
+
+    <body>
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%; margin-top: 0; position: absolute; z-index: 1; opacity: 1; " >
+   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html"><h6>Home</h6> <span class="sr-only">(current)</span></a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="./kerala.html"><h6>About Us</h6></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><h6>Contact Us</h6></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./signin.html"><h6>Sign In</h6></a>
+            </li>
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               
+               
+               
+                Districts<span class="caret"></span></button>
+              </a>
+              <ul class="dropdown-menu" >
+                <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
+                <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
+                <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
+                <li><a href="./DISTRICTS/kozhikode.html">KOZHIKODE</a></li>
+                <li><a href="./DISTRICTS/malappuram.html">MALAPPURAM</a></li>
+                <li><a href="./DISTRICTS/palakkad.html">PALAKKAD</a></li>
+                <li><a href="./DISTRICTS/trichur.html">THRISSUR</a></li>
+                <li><a href="./DISTRICTS/ekm.html">ERNAKULAM</a></li>
+                <li><a href="./DISTRICTS/idukki.html">IDUKKI</a></li>
+                <li><a href="./DISTRICTS/ktym.html">KOTTAYAM</a></li>
+                <li><a href="./DISTRICTS/alppy.html">ALAPPUZHA</a></li>
+                <li><a href="./DISTRICTS/pathanmthtt.html">PATHANAMTHITTA</a></li>
+                <li><a href="./DISTRICTS/kollam.html">KOLLAM</a></li>
+                <li><a href="./DISTRICTS/tvm.html">THIRUVANANTHAPURAM</a></li>
+                <div class="dropdown-divider"></div>
+                <li><a href="./districts.html">DISTRICTS</a></li>
+              </ul>
+              </div>
+            </li>
+          
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="bg-text">
+        <form class="row g-3 " >
+        
+          <h1 style="padding: 10px;" >Sign Up </h1>
+         
+       
+        
+        
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="First name">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress2" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Last Name">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="col-12">
+            <label for="inputAddress2" class="form-label">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Nationality</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                I agree to the<a href="#"> Terms of Use</a> 
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" style="margin: 10px;">Sign Up</button>
+          </div>
+        </form>
+      
+      </div>
+     
+
+    <!-- Page Content -->
+
+    
+
+      
+     
+    
+
+   
+    
+
+    </body>
+  </html>

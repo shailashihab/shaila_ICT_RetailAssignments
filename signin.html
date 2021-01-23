@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signin</title>
+        <link rel="stylesheet" href="./style.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+   <style>
+ 
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+body{
+  background-image: url(./Images/godsown.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+   </style>
+    </head>
+<body   >
+   
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%; position: fixed; z-index: 1; " >
+   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html"><h6>Home</h6> <span class="sr-only">(current)</span></a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="./kerala.html"><h6>About Us</h6></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><h6>Contact Us</h6></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./signin.html"><h6>Sign In</h6></a>
+            </li>
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               
+               
+               
+                Districts<span class="caret"></span></button>
+              </a>
+              <ul class="dropdown-menu" >
+                <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
+                <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
+                <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
+                <li><a href="./DISTRICTS/kozhikode.html">KOZHIKODE</a></li>
+                <li><a href="./DISTRICTS/malappuram.html">MALAPPURAM</a></li>
+                <li><a href="./DISTRICTS/palakkad.html">PALAKKAD</a></li>
+                <li><a href="./DISTRICTS/trichur.html">THRISSUR</a></li>
+                <li><a href="./DISTRICTS/ekm.html">ERNAKULAM</a></li>
+                <li><a href="./DISTRICTS/idukki.html">IDUKKI</a></li>
+                <li><a href="./DISTRICTS/ktym.html">KOTTAYAM</a></li>
+                <li><a href="./DISTRICTS/alppy.html">ALAPPUZHA</a></li>
+                <li><a href="./DISTRICTS/pathanmthtt.html">PATHANAMTHITTA</a></li>
+                <li><a href="./DISTRICTS/kollam.html">KOLLAM</a></li>
+                <li><a href="./DISTRICTS/tvm.html">THIRUVANANTHAPURAM</a></li>
+                <div class="dropdown-divider"></div>
+                <li><a href="./districts.html">DISTRICTS</a></li>
+              </ul>
+              </div>
+            </li>
+          
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      
+
+      
+
+      <div class="bg-text">
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5">
+      <form style="  margin: 10px; padding: 10px;" >
+          <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3">
+            </div>
+          </div>
+          <a href="#">Forgot password?</a><br>
+          <button type="submit" class="btn btn-primary" style="margin: 10px;">Sign in</button>
+        </form>
+  
+          
+      </div>
+      <div class="col-lg-5">
+          <form style="margin: 10px; padding: 50px; " >
+              Don't have an account yet? <br>
+              <a href="./signup.html">Sign up</a>
+            </form>
+      
+      </div>
+      <div class="col-lg-1"></div>
+      </div>
+      </div>
+
+
+
+    
+</body>
+</html>

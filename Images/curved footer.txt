@@ -1,0 +1,192 @@
+curved footer
+html
+
+<div class="nav-bar">
+  <div class="logo">
+    <a href="#">Logo</a>
+  </div>
+  <a href="#mobile_nav" class="nav-trigger" data-target=".main-navigation"></a>
+</div>
+
+<nav role="navigation" class="main-navigation">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Clients</a></li>
+    <li><a href="#">Our Work</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav> 
+
+<header role="banner">
+  <div class="curved-banner">
+    <h1>[Message]</h1> 
+  </div> 
+</header>
+
+<main role="main" id="content">
+  <h2>Heading Here</h2>
+  <p class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem molestiae ipsa, quo odio dignissimos quam veniam dolorum magni. At, blanditiis, voluptatem. Numquam perspiciatis unde laudantium ipsa vel similique error, sunt.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quasi vel quae provident ut illum. Dignissimos, sapiente rerum hic voluptate doloremque tenetur, eveniet beatae, animi omnis facilis pariatur exercitationem! Maiores enim explicabo, aliquid facilis dolor, eligendi quod quidem accusantium dolore ratione eveniet. Delectus aliquid consequatur saepe magni nihil quasi, inventore maxime iste distinctio, assumenda voluptatem eos sequi itaque nesciunt blanditiis atque fuga architecto autem, neque cupiditate cumque minus earum? Autem, nisi, quaerat! Repudiandae veniam dolorum modi facilis aspernatur voluptatem quia quas obcaecati laudantium laborum eaque porro quibusdam delectus, laboriosam distinctio vitae vel voluptatibus, sapiente consequatur veritatis id animi facere. Deleniti eum sapiente magni ex possimus doloremque omnis quo, asperiores ipsa doloribus, accusantium consequuntur ducimus esse perspiciatis animi voluptates, eveniet quod porro qui quisquam impedit error in adipisci sed. Et adipisci voluptate sapiente hic enim id, dolor, repudiandae, maxime impedit numquam consequuntur fugiat modi ea quaerat. Sapiente, fugit! Debitis sed in iste quod molestiae sequi minima dolorem labore quia iure, error unde a, deserunt eos magni! Eum corporis, id suscipit amet laudantium quasi illo unde recusandae aliquam, fuga molestias, omnis eaque ea laboriosam harum. Quam esse molestias commodi animi sapiente, sequi id totam modi cum dolore, hic optio quia voluptas cupiditate porro adipisci facere, fugit odio quaerat voluptatem velit atque architecto. Placeat officiis possimus corporis fuga excepturi laudantium amet id est aliquid eveniet? Dicta laborum, ullam ad accusamus labore atque id. Soluta neque ducimus assumenda nemo optio, ad accusamus accusantium minus necessitatibus commodi, repellat vel nihil suscipit debitis fuga dicta aut repellendus eaque sunt! Alias aspernatur laborum eligendi rem odio deserunt consequuntur repudiandae vitae, corporis blanditiis hic, in aliquam dignissimos quis itaque debitis enim sequi perferendis officia libero! Eum, neque. Veritatis sit, voluptates labore voluptatem, iure quibusdam. Aliquid sapiente tempore ratione ipsa, adipisci, atque nobis aperiam neque laudantium odit, inventore consequuntur!</p>
+</main>
+
+<footer id="footer" role="contentinfo">
+  <div class="wrap"><p>footer</p></div>
+</footer>
+
+css section
+html { box-sizing: border-box; }
+*,:before,:after { box-sizing: inherit; }
+
+html,body { 
+  height: 100%; 
+  font-family: 'Avenir',sans-serif;
+}
+
+$keyBreakpoint: 600px;
+
+@mixin absCenter(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-navigation {
+  padding: 1em;
+  background: #333;
+  margin-top: -320px;
+  transition: margin-top .3s ease-in-out;
+  &.on { margin-top: 0; }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  li {
+    list-style: none;
+    line-height: 2.3;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  a { 
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+  }
+  @media(min-width: $keyBreakpoint){
+    margin-top: -48px;
+    ul { flex-direction: row; }
+    li { font-size: 1em; line-height: 1; }
+  }
+} // .main-navigation
+
+.nav-bar {
+  background: #222;
+  position: relative;
+  padding: .3em;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  float: left;
+  border: solid 1px #888;
+  padding: .2em 1em;
+  margin: .2em 0 0 .2em;
+  text-align: center;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+a.nav-trigger {
+  text-decoration: none;
+  float: right;
+  &:after {
+    right: 10px;
+    content: "\2261";
+    font-size: 3em;
+    color: #fff;
+    line-height: .75;
+  }
+}
+
+header { 
+  height: 70%;
+  max-height: 300px; 
+  width: 100%;
+  position: relative;
+  overflow: hidden; 
+}
+
+.curved-banner {
+  background: url(http://lorempixel.com/output/abstract-q-c-1920-822-3.jpg) 0 50% no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  left: -30%;
+  right: -30%;
+  bottom: 0px;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transition: background-image 2s;
+}
+
+h1 { 
+  @include absCenter();
+  margin: 0;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 1px 1px 1px #666;
+}
+
+#content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+#footer {
+  overflow: hidden;
+  text-align: center;
+  .wrap {
+    background: #ddd;
+    width: 140%;
+    margin-left: -20%;
+    margin-right: -20%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    height: 12.5em;
+    padding-top: 1em;
+  }
+}
+
+h2 { font-size: 2em; }
+
+.intro { 
+  font-size: 1.9em; 
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.4em;
+  line-height: 1.4;
+}
+
+js section
+var $navTrigger = $(".nav-trigger"),
+    visibleNavClass = "on";
+
+    $navTrigger.on("click", function(e){
+      e.preventDefault();
+      var target = $(this).data("target");
+      $(target).toggleClass(visibleNavClass);
+    });
