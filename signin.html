@@ -64,14 +64,11 @@ body{
             </li>
             
             
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               
-               
-               
-                Districts<span class="caret"></span></button>
-              </a>
-              <ul class="dropdown-menu" >
+          
+              <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Districts</a>
+                <ul class="dropdown-menu">
+             
                 <!-- <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
                 <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
                 <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
@@ -148,6 +145,10 @@ body{
           var password = document.myform.password.value;
           if (password == null || password == "" || email == "" || email == null){
             alert("These fields cannot be blank");
+            return false;
+          }
+          else if (password.length < 8) {
+            alert("Password must be atleast 8 characters long ");
             return false;
           }
           else if (regexpr1.test(email)) {
