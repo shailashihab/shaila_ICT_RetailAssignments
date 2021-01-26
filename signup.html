@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Signin</title>
+        <title>SignUp</title>
         <link rel="stylesheet" href="./style.css">
     
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     </head>
     <style>
@@ -19,23 +20,84 @@
 .bg-text {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(119, 175, 189, 0.9); /* Black w/opacity/see-through */
-  color: white;
+  /* color: white; */
   font-weight: bold;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 55%;
+  top: 62%;
   left: 30%;
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 40%;
   padding: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 body{
   background-image: url(./Images/godsown.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
+form .indicator{
+  height: 10px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+}
+form .indicator span{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: lightgrey;
+  border-radius: 5px;
+}
+form .indicator span:nth-child(2){
+  margin: 0 3px;
+}
+form .indicator span.active:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.indicator span.weak:before{
+  background-color: #ff4757;
+}
+.indicator span.medium:before{
+  background-color: orange;
+}
+.indicator span.strong:before{
+  background-color: #23ad5c;
+}
+form .text{
+  font-size: 20px;
+  font-weight: 500;
+  display: none;
+  margin-bottom: -10px;
+}
+form .text.weak{
+  color: #ff4757;
+}
+form .text.medium{
+  color: orange;
+}
+form .text.strong{
+  color: #026129;
+}
+.flex-container{
+  display: flex;
+}
+i{
+  color: black;
+  background-color: #cccccc;
+  padding: 10px 10px 11px 10px;
+}
+
+
 
     </style>
 
@@ -71,8 +133,8 @@ body{
                
                 Districts<span class="caret"></span></button>
               </a>
-              <ul class="dropdown-menu" >
-                <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
+              <ul class="dropdown-menu"  >
+                <!-- <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
                 <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
                 <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
                 <li><a href="./DISTRICTS/kozhikode.html">KOZHIKODE</a></li>
@@ -86,7 +148,7 @@ body{
                 <li><a href="./DISTRICTS/pathanmthtt.html">PATHANAMTHITTA</a></li>
                 <li><a href="./DISTRICTS/kollam.html">KOLLAM</a></li>
                 <li><a href="./DISTRICTS/tvm.html">THIRUVANANTHAPURAM</a></li>
-                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div> -->
                 <li><a href="./districts.html">DISTRICTS</a></li>
               </ul>
               </div>
@@ -101,59 +163,68 @@ body{
       </nav>
 
       <div class="bg-text">
-        <form class="row g-3 " >
+        <form action="signin.html" name="myform" method="POST" onsubmit="return validateform();" class="row g-3 " >
         
-          <h1 style="padding: 10px;" >Sign Up </h1>
+          <h1 class="col-12">Sign Up </h1>
          
        
         
         
-          <div class="col-12">
-            <label for="inputAddress" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="First name">
+          <div class="col-md-6">
+            <label for="inputAddress" class="form-label">First Name*</label>
+            <input type="text" name="name" class="form-control" id="Name1" placeholder="First name">
           </div>
-          <div class="col-12">
+          <div class="col-md-6">
             <label for="inputAddress2" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Last Name">
+            <input type="text" class="form-control" id="Name2" placeholder="Last Name">
           </div>
-          <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+          <div class="col-12">
+            <label for="inputEmail4"  class="form-label">Email*</label>
+            
+            <input type="email" name="email"onkeyup="mailvalid();" class="form-control" id="inputEmail">
+            <label for="status-email" id="emailerror" style="width: 100%;"></label>
           </div>
-          <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
+         
+          <div class="col-12">
+            <label for="inputPassword4" class="form-label">Password*</label>
+            <div class="flex-container">
+            <div style="width: 95%;" ><input type="password" onkeyup="trigger();" name="password" class="form-control" id="password" data-toggle="password"></div>
+            <div style="width: 5%;" onclick="showpass();"><p><i class="fa fa-eye-slash"></i></p></div>
+            </div>
+            
+            <div class="indicator">
+              <span class="weak"></span>
+              <span class="medium"></span>
+              <span class="strong"></span>
+            </div>
+            <div class="text"></div>
+          </div>
+          <div class="col-12">
+            <label for="inputPassword4" class="form-label">Re-enter Password*</label>
+            <input type="password" name="password2" class="form-control" id="inputPassword5">
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Address</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
           </div>
-          <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-          </div>
+        
           <div class="col-md-6">
             <label for="inputCity" class="form-label">City</label>
             <input type="text" class="form-control" id="inputCity">
           </div>
           <div class="col-md-6">
-            <label for="inputState" class="form-label">Nationality</label>
-            <select id="inputState" class="form-select">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
+            <label for="inputZip" class="form-label">Phone number*</label>
+            <input type="text" name="phnumber" onkeyup="phnvalid();" class="form-control" id="inputZip">
+            <label for="phoneno" id="phoneerror" style="width: 100%;"></label>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <label for="inputState" class="form-label">State</label>
             <select id="inputState" class="form-select">
-              <option selected>Choose...</option>
-              <option>...</option>
+              <option selected>Kerala</option>
+              <option>Others</option>
             </select>
           </div>
-          <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
+         
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -176,7 +247,177 @@ body{
 
       
      
+    <script>
+
+ 
+        
+      function validateform(){
+        var name = document.myform.name.value;
+        var password = document.myform.password.value;
+        var secondpassword = document.myform.password2.value;
+        var email = document.myform.email.value;
+        var phnumber = document.myform.phnumber.value;
+        var regexpr = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,3}$/i;
+        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        var serror = document.getElementById("emailerror");
+        var perror = document.getElementById("phoneerror");
+       
+        var phno;
+        var eno;
+        
+     
+       if  (name == null || name == "" || email == null || email == "" || phnumber == null || phnumber == ""){
+        alert("These * fields are mandatory");
+        
+        }
+      
+       if (password.length < 8) {
+        alert("Password must be atleast 8 characters long ");
+        return false;}
+       
+       if (password != secondpassword) {
+        alert("passwords must be same"); 
+        return false;}
+      
+     
+      if (regexpr.test(email)) {
+        eno = 0;
+       } else {
+        eno = 1;
+        return false;
+      }
+      if (phoneno.test(phnumber)) {
+        phno = 0;
+      
+      } else {
+        phno = 1;
+       
+        
+        return false;
+              }
+      if (eno == 0 && phno == 0) {     
+           alert("Successful SignUp!! Good to go!!!");
+           return true;
+      }
     
+     
+      
+   
+     
+// function validate closing
+      } 
+      function trigger(){
+        const indicator = document.querySelector(".indicator");
+        var password = document.myform.password.value;
+        const weak = document.querySelector(".weak");
+        const medium = document.querySelector(".medium");
+        const strong = document.querySelector(".strong");
+        const text = document.querySelector(".text")
+        const ShowBtn = document.querySelector(".ShowBtn")
+
+        let regExpWeak = /[a-z]/;
+        let regExpMedium =/\d+/;
+        let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+
+        if(password != ""){
+          indicator.style.display = "block";
+          indicator.style.display = "flex";
+          if(password.length <= 3 && (password.match(regExpWeak) || password.match(regExpMedium) || password.match(regExpStrong)))no=1;
+          if(password.length >= 6 && ((password.match(regExpWeak) && password.match(regExpMedium)) || (password.match(regExpMedium) && password.match(regExpStrong)) || (password.match(regExpWeak) && password.match(regExpStrong))))no=2;
+          if(password.length >= 6 && password.match(regExpWeak) && password.match(regExpMedium) && password.match(regExpStrong))no=3;
+          
+          if(no==1){
+            weak.classList.add("active");
+            text.style.display = "block";
+            text.textContent = "Your password is too weak";
+            text.classList.add("weak");
+          }
+          if(no==2){
+            medium.classList.add("active");
+            text.textContent = "Your password is medium";
+            text.classList.add("medium");
+          }else{
+            medium.classList.remove("active");
+            text.classList.remove("medium");
+          }
+          if(no==3){
+            weak.classList.add("active");
+            medium.classList.add("active");
+            strong.classList.add("active");
+            text.textContent = "Your password is strong";
+            text.classList.add("strong");
+          }else{
+            strong.classList.remove("active");
+            text.classList.remove("strong");
+          }
+          // if password is not null
+        }
+        // trigger function closing
+      }
+
+      function mailvalid(){
+
+        var email = document.myform.email.value;
+        
+        var regexpr1 = /^([A-Z0-9._%+-]+)@([A-Z0-9-]+)\.([A-Z]{2})$/i;
+
+        var regexpr = /^([A-Z0-9._%+-]+)@([A-Z0-9-]+)\.([A-Z]{2,3})(\.[A-Z]{2})?$/i;
+
+        
+        var serror = document.getElementById("emailerror");
+        if (!regexpr.test(email))  {
+            serror.innerHTML = "Invalid email address.";
+            serror.style.border = "2px solid red";
+            serror.style.color = "red";
+        }
+        
+        else{
+          serror.innerHTML = "valid mailid";
+          serror.style.border = "2px solid green";
+          serror.style.color = "green";
+        }
+        if (regexpr1.test(email))  {
+            serror.innerHTML = "Invalid email address.";
+            serror.style.border = "2px solid red";
+            serror.style.color = "red";
+        }
+      }
+      function phnvalid(){
+        var phnumber = document.myform.phnumber.value;
+ 
+        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+       
+        var perror = document.getElementById("phoneerror");
+        if (!phoneno.test(phnumber)) {
+            perror.innerHTML = "Invalid phone number.";
+            perror.style.border = "2px solid red";
+            perror.style.color = "red";
+        }
+        else{
+          perror.innerHTML = "valid phone number";
+          perror.style.border = "2px solid green";
+          perror.style.color = "green";
+        }
+      }
+      function showpass(){
+       
+        var y = document.getElementsByTagName("i");
+        var x = document.getElementById("password");
+
+        if (x.type === "password") {
+          x.type = "text";
+          y[0].removeAttribute("class","fa fa-eye-slash");
+          y[0].setAttribute("class","fa fa-eye");
+        } else {
+          x.type = "password";
+          y[0].removeAttribute("class","fa fa-eye");
+          y[0].setAttribute("class","fa fa-eye-slash")
+        }
+
+        
+       
+      }
+    </script>
 
    
     

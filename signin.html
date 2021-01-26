@@ -72,7 +72,7 @@ body{
                 Districts<span class="caret"></span></button>
               </a>
               <ul class="dropdown-menu" >
-                <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
+                <!-- <li><a href="./DISTRICTS/kasargod.html">KASARGOD</a></li>
                 <li><a href="./DISTRICTS/kannur.html">KANNUR</a></li>
                 <li><a href="./DISTRICTS/waynad.html">WAYANAD</a></li>
                 <li><a href="./DISTRICTS/kozhikode.html">KOZHIKODE</a></li>
@@ -86,7 +86,7 @@ body{
                 <li><a href="./DISTRICTS/pathanmthtt.html">PATHANAMTHITTA</a></li>
                 <li><a href="./DISTRICTS/kollam.html">KOLLAM</a></li>
                 <li><a href="./DISTRICTS/tvm.html">THIRUVANANTHAPURAM</a></li>
-                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div> -->
                 <li><a href="./districts.html">DISTRICTS</a></li>
               </ul>
               </div>
@@ -108,17 +108,18 @@ body{
         <div class="row">
           <div class="col-lg-1"></div>
           <div class="col-lg-5">
-      <form style="  margin: 10px; padding: 10px;" >
+      <form action="index.html" onsubmit="return validate();" name="myform" style="  margin: 10px; padding: 10px;" >
           <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3">
+              <input type="email" class="form-control" name="email" id="inputEmail3">
+              <label for="error" id="error"></label>
             </div>
           </div>
           <div class="row mb-3">
             <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword3">
+              <input type="password" name="password" class="form-control" id="inputPassword3">
             </div>
           </div>
           <a href="#">Forgot password?</a><br>
@@ -139,7 +140,33 @@ body{
       </div>
 
 
+      <script>
+        function validate(){
+          var regexpr = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,3}$/i;
+          var regexpr1 = /^([A-Z0-9._%+-]+)@([A-Z0-9-]+)\.([A-Z]{2})$/i;
+          var email = document.myform.email.value;
+          var password = document.myform.password.value;
+          if (password == null || password == "" || email == "" || email == null){
+            alert("These fields cannot be blank");
+            return false;
+          }
+          else if (regexpr1.test(email)) {
+            alert("invalid mailid");
+            return false;
+          }
+          else if (!regexpr.test(email)) {
+            alert("invalid mailid");
+            return false;
 
+          } 
+        
+          else {
+            alert("successful login!!");
+            return true;
+          }
+        }
+       
+      </script>
     
 </body>
 </html>
